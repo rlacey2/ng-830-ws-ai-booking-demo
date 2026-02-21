@@ -1,0 +1,33 @@
+ 
+      <div>
+        @defer (when isLoaded()) {
+
+        @if (!isSoldOut()) {
+        <div>
+          Seats available: {{ seatsRemaining() }}
+          <button (click)="book()">Book Seat</button>
+
+
+        @if(isOneLeft()) {
+          <span> Last One</span>
+        }
+
+
+
+        </div>
+        } @else {
+        <div>Sold out</div>
+        }
+
+        } @placeholder {
+        <div class="skeleton">
+          Loading availability…
+        </div>
+        }
+      </div>
+ 
+ 
+ 
+ 
+
+ 
